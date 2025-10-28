@@ -1,4 +1,4 @@
-name: Microservices CI/CD with Docker
+name: Microservices CI/CD with Docke
 
 on:
   push:
