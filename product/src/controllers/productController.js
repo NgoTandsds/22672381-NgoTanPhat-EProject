@@ -122,15 +122,22 @@ class ProductController {
     res.status(500).json({ message: "Server error" });
   }  
 } */
-  async getProductsById(req, res){
+/*   async getProductsById(req, res){
     try {
       res.json(await Product.findById(req.params.id));
     }catch (error) {
       console.error(error);
       res.status(500).json({ message: "Server error" });
     }
+  } */
+  async getProductsById(req,res){
+    try{
+      res.json(await Product.findById(req.params.id));
+    }catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Server error" });
+    }
   }
-
 }
 
 module.exports = ProductController;
