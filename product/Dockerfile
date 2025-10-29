@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy package files và cài dependencies
 COPY package*.json ./
 RUN npm install --production
+RUN npm install -g nodemon
 
 # Copy source code
 COPY . .
@@ -15,4 +16,4 @@ COPY . .
 EXPOSE 3002
 
 # Lệnh chạy service
-CMD ["node", "index.js"]
+CMD ["npm", "run", "dev"]

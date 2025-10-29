@@ -63,6 +63,10 @@ services:
   product:
     build: ./product
     container_name: product
+    volumes:
+      - ./product:/app            # gắn code thật từ máy vào container
+      - /app/node_modules         # tránh ghi đè thư mục node_modules trong container
+    command: npm run dev          # dùng nodemon để auto reload khi code thay đổi
     environment:
       - MONGODB_PRODUCT_URI=mongodb://mymongodb:27017/productdb
       - RABBITMQ_URL=amqp://rabbitmq
