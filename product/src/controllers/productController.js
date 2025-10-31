@@ -131,7 +131,7 @@ class ProductController {
     }
   } */
   async getProductsById(req, res){
-    try{ 
+    try{
       res.json(await Product.findById(req.params.id));
     }catch (error) {
       console.error(error);
