@@ -10,7 +10,7 @@ class ProductController {
   constructor() {
     this.createOrder = this.createOrder.bind(this);
     this.getOrderStatus = this.getOrderStatus.bind(this);
-    this.getProductsById= this.getProductsById.bind(this);
+    this.getProductsById=this.getProductsById.bind(this);
     this.ordersMap = new Map();
     
   }
@@ -111,7 +111,8 @@ class ProductController {
     }
   }
 //-----------------------------------------
-  async getProductsById(req,res){
+   
+  async getProductsById(req, res){
     try{
       res.json(await Product.findById(req.params.id));
     }catch (error) {
